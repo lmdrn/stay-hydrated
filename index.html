@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lélé la menace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="app" id="app">
+      <!-- Bouton close --->
+      <button class="bouton" id="close-btn"> X </button>
+
+      <div class="texte">
+        <h1 style="text-align: center;">Niveau d'hydratation</h1>
+
+        <img style="display: none;" id="title-hydrated" class="title is-active" src="assets/imgs/hydrated_title.png" alt="hydrated" />
+        <img style="display: none;" id="title-dehydrated" class="title" src="assets/imgs/dehydrated_title.png" alt="dehydrated" />
+        <img style="display: none;" id="title-forgotten" class="title" src="assets/imgs/forgotten_title.png" alt="forgotten" />
+      </div>
+
+      <div class="character">
+        <img id="char-hydrated" class="char is-active" src="assets/imgs/hydrated.png" alt="hydrated character" />
+        <img id="char-dehydrated" class="char" src="assets/imgs/dehydrated.png" alt="dehydrated character" />
+        <img id="char-forgotten" class="char" src="assets/imgs/forgotten.png" alt="forgotten character" />
+      </div>
+
+      <!-- Progress Bar-->
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="progress-text">0 / 2 L</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Félicitations -->
+      <div id="congrats" class="congrats hidden">T'as bu 2L, you bad hydrated bitch !</div>
+
+      <!-- Bouton boire -->
+      <button class="bouton" id="drink-btn"> Boire !</button>
+    </div>
+
+    <!-- Modal choix quantité -->
+    <div id="drink-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <h2>Combien tu bois ?</h2>
+        <div class="modal-actions">
+          <button class="qty-btn" data-qty="0.25">0.25 L</button>
+          <button class="qty-btn" data-qty="0.5">0.5 L</button>
+          <button class="qty-btn" data-qty="0.75">0.75 L</button>
+          <button class="qty-btn" data-qty="1">1 L</button>
+        </div>
+        <button id="modal-cancel" class="modal-cancel">Annuler</button>
+      </div>
+    </div>
+
+    <!-- Alarme -->
+    <audio id="alarm-audio" preload="auto">
+      <source src="assets/sounds/alarm.wav" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
